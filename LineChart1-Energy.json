@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/World_data_oilEnergy_V2.csv"
+  },
+  "width": 600,
+  "height": 500,
+  "encoding": {"x": {"field": "Year", "type": "temporal"}},
+  "title": "Primary direct energy consumption by source, World",
+  "layer": [
+    {
+      "encoding": {
+        "color": {"field": "Energy Type", "type": "nominal"},
+        "y": {"field": "Value", "type": "quantitative"}
+      },
+      "layer": [
+        {"mark": "line"},
+        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+      ]
+    },
+    {
+      "transform": [
+        {"pivot": "Energy Type", "value": "Value", "groupby": ["Year"]}
+      ],
+      "mark": "rule",
+      "encoding": {
+        "opacity": {
+          "condition": {"value": 0.3, "selection": "hover"},
+          "value": 0
+        },
+        "tooltip": [
+          {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year"
+          },
+          {
+            "field": "Oil Consumption - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Coal Consumption - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Gas Consumption - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Hydro Generation - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Nuclear Generation - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Geo Biomass Other - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Wind Generation -TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          },
+          {
+            "field": "Solar Generation - TWh",
+            "type": "quantitative",
+            "format": ".0f"
+          }
+        ]
+      },
+      "selection": {
+        "hover": {
+          "type": "single",
+          "fields": ["Year"],
+          "nearest": true,
+          "on": "mouseover",
+          "empty": "none",
+          "clear": "mouseout"
+        }
+      }
+    }
+  ],
+  "config": {}
+}
