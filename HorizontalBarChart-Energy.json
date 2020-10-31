@@ -43,7 +43,7 @@
         "title": "Enery Imports/Exports (%)"
       }
     },
-    "color": {"field": "Entity", "type": "nominal"}
+    "color": {"field": "Entity", "type": "nominal", "legend":false}
   },
   "config": {}
 }
