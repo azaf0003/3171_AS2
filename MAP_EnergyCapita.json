@@ -34,7 +34,7 @@
     ]
   },
   "config": {
-      "background":"",
+      "background":"lightcoral",
   "view": {
      "stroke": "transparent"
   }
