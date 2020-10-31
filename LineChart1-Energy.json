@@ -10,7 +10,7 @@
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Energy Type", "type": "nominal"},
+        "color": {"field": "Energy Type", "type": "nominal", "legend":{"orient": "bottom", "direction":"vertical"}},
         "y": {"field": "Value", "type": "quantitative"}
       },
       "layer": [
