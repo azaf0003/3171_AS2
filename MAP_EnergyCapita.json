@@ -29,12 +29,14 @@
         "domain":[2500, 20000, 50000,100000],
         "range":["#ffe6e6","#ff9999", "#ff4d4d", "#cc0000", "#800000"]
         },
-        "legend": {"orient": "bottom"},
-      "title": "Energy Per Capita (TWh)"
+        "legend": {"orient": ""},
+      "title": "Energy Use (KWh)"
     },
     "tooltip": [
-      {"field": "properties.NAME", "type": "nominal", "title": "Country"},
-      {"field": "EnergyConsumptionPerCapita(kWh)", "type": "quantitative", "title": "Enery (TWh)"}
+      {"field": "properties.NAME", "type": "nominal", "title":
+      "Country"},
+      {"field": "EnergyConsumptionPerCapita(kWh)", "type":
+      "quantitative", "format":".2f", "title": "Enery (KWh)"}
     ]
   },
   "config": {
