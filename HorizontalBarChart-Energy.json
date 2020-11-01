@@ -1,15 +1,14 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "description": "A bar chart with negative values. We can hide the axis domain line, and instead use a conditional grid color to draw a zero baseline.",
-  "width": 425,
-  "height": 250,
+  "width": 500,
+  "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/energy-imports-and-exports-energy-use.csv"
   },
   "params": [
     {
       "name": "Year_Above",
-      "value": 2014,
+      "value": 1970,
       "bind": {
         "input": "range",
         "min": 1970,
@@ -29,7 +28,8 @@
         "domain": false,
         "ticks": false,
         "labelAngle": 0,
-        "labelPadding": 4
+        "labelPadding": 4,
+        "title": null
       }
     },
     "x": {
@@ -40,10 +40,19 @@
           "condition": {"test": "datum.value === 0", "value": "black"},
           "value": "#ddd"
         },
-        "title": "Enery Imports/Exports (%)"
+        "title": "Enery Imports/Exports (%)",
+        "grid": false
       }
     },
-    "color": {"field": "Entity", "type": "nominal", "legend":false}
+    "color": {
+      "field": "Entity", 
+      "scale": {"range":["#8b0000", "#ffe6e6","#ffe6e6","#ffe6e6","#ffe6e6"]}, 
+      "legend":false}
   },
-  "config": {}
+   "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
