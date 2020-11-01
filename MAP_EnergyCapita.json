@@ -24,7 +24,12 @@
     "color": {
       "field": "EnergyConsumptionPerCapita(kWh)",
       "type": "quantitative",
-      "scale": {"type": "threshold", "domain":[2500, 20000, 50000,100000]},
+      "scale": {
+        "type": "threshold", 
+        "domain":[2500, 20000, 50000,100000],
+        "range":["#ffe6e6","#ff9999", "#ff4d4d", "#cc0000", "#800000"]
+        },
+        "legend": {"orient": "bottom"},
       "title": "Energy Per Capita (TWh)"
     },
     "tooltip": [
