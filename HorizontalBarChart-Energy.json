@@ -47,7 +47,11 @@
     "color": {
       "field": "Entity", 
       "scale": {"range":["#8b0000", "#ffe6e6","#ffe6e6","#ffe6e6","#ffe6e6"]}, 
-      "legend":false}
+      "legend":false},
+     "tooltip": [
+      {"field": "Energy imports", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "Total Emission"}, 
+      {"field": "Year", "type": "temporal", "title": "Year", "timeUnit":"year"}
+    ]
   },
    "config": {
       "background":"",
