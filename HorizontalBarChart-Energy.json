@@ -8,10 +8,10 @@
   "params": [
     {
       "name": "Year_Above",
-      "value": 1970,
+      "value": 1980,
       "bind": {
         "input": "range",
-        "min": 1970,
+        "min": 1980,
         "max": 2014,
         "step": 1,
         "name": "Minimum year"
@@ -41,8 +41,8 @@
           "value": "#ddd"
         },
         "title": "Enery Imports/Exports (%)",
-        "grid": false
-      }
+        "grid": false},
+        "scale": {"domain": [-40,40]}
     },
     "color": {
       "field": "Entity", 
