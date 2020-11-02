@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/World_data_oilEnergy_V2.csv"
   },
   "width": 600,
-  "height": 450,
+  "height": 500,
   "encoding": {
     "x": {"field": "Year", 
     "type": "temporal", "axis":  {"grid": false, "ticks": false}}
@@ -133,11 +133,45 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":-150,
-          "dy": -225,
-          "text": "The United States is the world's biggest oil consumer, followed by China.",
-          "fontWeight":"normal",
-          "fontSize": 12
+          "dx":100,
+          "dy": 20,
+          "text": "The United States is the world's "
+        },
+        "encoding": {
+
+          "opacity":{
+          "condition":
+          {"test": " year(datum.Year)== 2017 && datum['Energy Type'] ==['Oil Consumption - TWh']", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":100,
+          "dy": 40,
+          "text": "biggest oil consumer, followed"
+        },
+        "encoding": {
+
+          "opacity":{
+          "condition":
+          {"test": " year(datum.Year)== 2017 && datum['Energy Type'] ==['Oil Consumption - TWh']", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":100,
+          "dy": 60,
+          "text": "by China, then India and Japan."
         },
         "encoding": {
 
