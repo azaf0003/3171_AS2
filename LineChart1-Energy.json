@@ -5,17 +5,40 @@
   },
   "width": 600,
   "height": 500,
-  "encoding": {"x": {"field": "Year", "type": "temporal"}},
-  "title": "Primary direct energy consumption by source, World",
+  "encoding": {
+    "x": {"field": "Year", 
+    "type": "temporal", "axis":  {"grid": false, "ticks": false}}
+    
+    
+    },
+
   "layer": [
     {
       "encoding": {
-        "color": {"field": "Energy Type", "type": "nominal", "legend":{"orient": "bottom", "direction":"vertical"}},
-        "y": {"field": "Value", "type": "quantitative"}
+        "color": {"field": "Energy Type", "type": "nominal", "legend": null, 
+        "scale": {"range": ["#8b0000", "#8b0000", "#ffe6e6", "#ffe6e6", "#ffe6e6", "#8b0000","#ffe6e6", "#ffe6e6" ]}},
+        "y": {"field": "Value", "type": "quantitative", "axis": {"domainColor":""}, "title": "Energy (KWh)"}
       },
       "layer": [
         {"mark": "line"},
-        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"}
+        {"transform": [{"filter": {"selection": "hover"}}], "mark": "point"},
+        {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx":40,
+        "dy":-10
+      },
+      "encoding": {
+        "text": {"field": "Energy Type", "type": "nominal"},
+        "color": {"value": "black"},
+        "opacity":{
+          "condition": {"test": "year(datum.Year) == 2016 && (datum['Energy Type']=='Oil Consumption - TWh' || datum['Energy Type']=='Coal Consumption - TWh' || datum['Energy Type']=='Gas Consumption - TWh')" , "value": 1},
+          "value": 0
+        }
+      }
+
+    }
       ]
     },
     {
@@ -87,7 +110,51 @@
           "clear": "mouseout"
         }
       }
-    }
+    },
+    {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":60,
+          "dy": 200,
+          "text": "Others"
+        },
+        "encoding": {
+
+          "opacity":{
+          "condition":
+          {"test": " year(datum.Year)== 2017 && datum['Energy Type'] ==['Oil Consumption - TWh']", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":-150,
+          "dy": -225,
+          "text": "The United States is the world's biggest oil consumer, followed by China.",
+          "fontWeight":"normal",
+          "fontSize": 12
+        },
+        "encoding": {
+
+          "opacity":{
+          "condition":
+          {"test": " year(datum.Year)== 2017 && datum['Energy Type'] ==['Oil Consumption - TWh']", "value": 1},
+          "value": 0
+
+        }
+        }
+  }
+
   ],
-  "config": {}
+  "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent"
+  }
+}
 }
