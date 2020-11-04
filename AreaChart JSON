@@ -1,12 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 650, "height": 400,
-  "data": {"url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/renewable-energy-investment.csv"},
-  
-  "transform": [
- {"filter": "datum.Entity != 'wIndia'"}
- ],
+  "width": 550, "height": 400,
+  "data": {"url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/renewable-energy-investment3.csv"},
 
+  "transform": [
+    {"filter": "datum.Entity != 'wIndia'"}
+  ],
   "encoding": {
     "x": {"field": "Year", "type":"temporal", "axis":  {"grid": false, "ticks": false}
     },
@@ -18,104 +17,22 @@
       "scale": {"scheme": "redgrey"},
       "sort": "-color",
       "legend":false
-      }
+    },
+    "tooltip": [
+      {"field": "Entity2", "type": "nominal", "title": "Entity"},
+      {
+        "field": "Annual CO2 emissions",
+        "type": "quantitative",
+        "format": ".2f",
+        "title": "Co2 emission in Million Tonnes"
+      },
+      {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"}
+    ]
+
   },
 
   "layer": [
-    {"mark": "area"},
-
-
-    {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "dx":95,
-          "dy": 45,
-          "text": "Europe"
-        },
-        "encoding": {
-          
-          "opacity":{
-          "condition":
-          {"test": " datum.Entity == 'zEurope' && year(datum.Year) == 2014 ", "value": 1},
-          "value": 0
-
-        }
-        }
-  },
-  {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "dx":88,
-          "dy": -5,
-          "text": "China"
-        },
-        "encoding": {
-          
-          "opacity":{
-          "condition":
-          {"test": " datum.Entity == 'yChina' && year(datum.Year) == 2014 ", "value": 1},
-          "value": 0
-
-        }
-        }
-  },
-  {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "dx":147,
-          "dy": -180,
-          "text": "Asia and Oceania"
-        },
-        "encoding": {
-          
-          "opacity":{
-          "condition":
-          {"test": " datum.Entity == 'xAsia and Oceania (excl. China and India)' && year(datum.Year) == 2014 ", "value": 1},
-          "value": 0
-
-        }
-        }
-  },
-  {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "dx":125,
-          "dy": -300,
-          "text": "United States"
-        },
-        "encoding": {
-          
-          "opacity":{
-          "condition":
-          {"test": " datum.Entity == 'tBrazil' && year(datum.Year) == 2014 ", "value": 1},
-          "value": 0
-
-        }
-        }
-  },
-  {
-        "mark": {
-          "type": "text",
-          "align": "right",
-          "dx":89,
-          "dy": -360,
-          "text": "Other"
-        },
-        "encoding": {
-          
-          "opacity":{
-          "condition":
-          {"test": " datum.Entity == 'sMiddle East and Africa' && year(datum.Year) == 2014 ", "value": 1},
-          "value": 0
-
-        }
-        }
-  }
-
+    {"mark": "area"}
   ],
  "config": {
       "background":"",
