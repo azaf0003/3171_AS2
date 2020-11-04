@@ -49,7 +49,7 @@
       "scale": {"range":["#8b0000", "#ffe6e6","#ffe6e6","#ffe6e6","#ffe6e6"]}, 
       "legend":false},
      "tooltip": [
-      {"field": "Energy imports", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "Total Emission"}, 
+      {"field": "Energy imports", "aggregate": "sum", "format": ".2f", "type": "quantitative", "title": "Trade (%)"}, 
       {"field": "Year", "type": "temporal", "title": "Year", "timeUnit":"year"}
     ]
   },
