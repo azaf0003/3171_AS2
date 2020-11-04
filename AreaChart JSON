@@ -1,0 +1,123 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 500, "height": 400,
+  "data": {"url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/renewable-energy-investment.csv"},
+
+
+  "encoding": {
+    "x": {"field": "Year", "type":"temporal", "axis":  {"grid": false, "ticks": false}
+    },
+    "y": {
+      "aggregate": "sum", "field": "Investment", "title": "Investment ($ Billion)", "axis": {"tickCount":5, "domainColor":""}
+    },
+    "color": {
+      "field": "Entity",
+      "scale": {"scheme": "redgrey"},
+      "sort": "-color",
+      "legend":false
+      }
+  },
+
+  "layer": [
+    {"mark": "area"},
+
+
+    {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":65,
+          "dy": 25,
+          "text": "Europe"
+        },
+        "encoding": {
+          
+          "opacity":{
+          "condition":
+          {"test": " datum.Entity == 'zEurope' && year(datum.Year) == 2014 ", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":58,
+          "dy": 5,
+          "text": "China"
+        },
+        "encoding": {
+          
+          "opacity":{
+          "condition":
+          {"test": " datum.Entity == 'yChina' && year(datum.Year) == 2014 ", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":117,
+          "dy": -80,
+          "text": "Asia and Oceania"
+        },
+        "encoding": {
+          
+          "opacity":{
+          "condition":
+          {"test": " datum.Entity == 'xAsia and Oceania (excl. China and India)' && year(datum.Year) == 2014 ", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":95,
+          "dy": -145,
+          "text": "United States"
+        },
+        "encoding": {
+          
+          "opacity":{
+          "condition":
+          {"test": " datum.Entity == 'tBrazil' && year(datum.Year) == 2014 ", "value": 1},
+          "value": 0
+
+        }
+        }
+  },
+  {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "dx":59,
+          "dy": -173,
+          "text": "Other"
+        },
+        "encoding": {
+          
+          "opacity":{
+          "condition":
+          {"test": " datum.Entity == 'sMiddle East and Africa' && year(datum.Year) == 2014 ", "value": 1},
+          "value": 0
+
+        }
+        }
+  }
+
+  ],
+ "config": {
+      "background":"",
+  "view": {
+     "stroke": "transparent"
+  }
+}
+}
