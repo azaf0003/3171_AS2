@@ -17,7 +17,7 @@
       "encoding": {
         "color": {"field": "Energy Type", "type": "nominal", "legend": null, 
         "scale": {"range": ["#8b0000", "#8b0000", "#ffe6e6", "#ffe6e6", "#ffe6e6", "#8b0000","#ffe6e6", "#ffe6e6" ]}},
-        "y": {"field": "Value", "type": "quantitative", "axis": {"domainColor":""}, "title": "Energy (KWh)"}
+        "y": {"field": "Value", "type": "quantitative", "axis": {"domainColor":""}, "title": "Energy (TWh)"}
       },
       "layer": [
         {"mark": "line"},
