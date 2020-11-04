@@ -3,7 +3,7 @@
   "data": {
     "url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/World_data_oilEnergy_V2.csv"
   },
-  "width": 800,
+  "width": 600,
   "height": 500,
   "encoding": {
     "x": {"field": "Year", 
