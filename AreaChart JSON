@@ -21,10 +21,10 @@
     "tooltip": [
       {"field": "Entity2", "type": "nominal", "title": "Entity"},
       {
-        "field": "Annual CO2 emissions",
+        "field": "Investment",
         "type": "quantitative",
         "format": ".2f",
-        "title": "Co2 emission in Million Tonnes"
+        "title": "Invesment (Billion USD) "
       },
       {"field": "Year", "type": "temporal", "timeUnit": "year", "title": "Year"}
     ]
