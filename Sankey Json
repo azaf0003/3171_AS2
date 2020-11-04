@@ -266,7 +266,7 @@
     {
       "name": "stackNames",
       "type": "ordinal",
-      "range": ["Continent", "Outcome"],
+      "range": ["Continent", "Source"],
       "domain": ["stk1", "stk2"]
     },
     {
