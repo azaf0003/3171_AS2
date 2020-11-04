@@ -1,8 +1,11 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
-  "width": 700, "height": 400,
+  "width": 650, "height": 400,
   "data": {"url": "https://raw.githubusercontent.com/azaf0003/3179_AS2/main/renewable-energy-investment.csv"},
-
+  
+  "transform": [
+ {"filter": "datum.Entity != 'wIndia'"}
+ ],
 
   "encoding": {
     "x": {"field": "Year", "type":"temporal", "axis":  {"grid": false, "ticks": false}
@@ -26,8 +29,8 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":65,
-          "dy": 25,
+          "dx":95,
+          "dy": 45,
           "text": "Europe"
         },
         "encoding": {
@@ -44,8 +47,8 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":58,
-          "dy": 5,
+          "dx":88,
+          "dy": -5,
           "text": "China"
         },
         "encoding": {
@@ -62,8 +65,8 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":117,
-          "dy": -80,
+          "dx":147,
+          "dy": -180,
           "text": "Asia and Oceania"
         },
         "encoding": {
@@ -80,8 +83,8 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":95,
-          "dy": -145,
+          "dx":125,
+          "dy": -300,
           "text": "United States"
         },
         "encoding": {
@@ -98,8 +101,8 @@
         "mark": {
           "type": "text",
           "align": "right",
-          "dx":59,
-          "dy": -173,
+          "dx":89,
+          "dy": -360,
           "text": "Other"
         },
         "encoding": {
